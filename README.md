@@ -139,10 +139,15 @@
 - El primer paso a llevar a cabo sería fusionar la rama de **matemáticas** en la rama **develop**. Se debería de integrar primero esta rama pues la algoritmia (o el back-end del proyecto) necesita estar terminado y ser estable para que al integrar la rama de Diseño UX (front-end del proyecto) no se generen un exceso de conflictos. Es decir, para que el equipo que trabaja en la parte de diseño tenga en cuenta todas las modificaciones que realice la parte de matemáticas antes de integrarse en **develop**. Si se tratase de integrar tanto **Diseño UX** como **matemáticas** al mismo tiempo en **develop**, se generarían más conflictos que si se hubiese integrado una rama antes que la otra, pues se hubiesen podido considerar las modificaciones de cada equipo y realizar los cambios oportunos antes de integrarse. Alternativamente, se podría realizar una fusión de la rama **Diseño UX** y **matemáticas** como una sola antes de integrarla en **develop**. A nivel técnico, la integración se realizaría de esta manera:
 
    **git checkout develop** Nos cambiamos a la rama develop
+  
    **git merge mátematicas** Comenzamos el merge de matemáticas
+  
    **nano <archivos_con_conflictos>** Nos metemos en los que generen conflictos, y se solucionan entre miembros del equipo develop y matemáticas
+  
    **git add .** Se añaden los cambios
+  
    **git merge --continue** Se finaliza la fusión
+  
 
 - A continuación se realizaría lo mismo pero con la rama **Diseño UX**, y a la hora de corregir conflictos se haría entre miembros de todos los equipos para evitar confusiones entre ramas. Una vez finalizado el merge entre las tres ramas dentro de **develop**, y todos los conflictos solucionados, el proyecto estaría listo para ser enviado a la rama **main**.
 
